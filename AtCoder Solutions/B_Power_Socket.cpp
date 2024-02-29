@@ -181,7 +181,18 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    int a, b, emp = 1, ans = 0;
+    cin >> a >> b;
+
+    while(emp < b) {
+        emp += a;
+        emp--;
+        ans++;
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }
