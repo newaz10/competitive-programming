@@ -1,6 +1,7 @@
-// CF(min 0900) -> Difficulty: 0990 (85) -> Tags: dp
-// CC(min 1000) -> Difficulty: 1265 (30) -> Tags: Sorting
-// AtCoder      -> Difficulty:    0 (00) -> Tags: None
+// CF (min 0900) -> Difficulty : 0990 (85) -> Tags: dp
+// CC (min 1000) -> Difficulty : 1265 (30) -> Tags: Sorting
+// AtCoder       -> Point      :    0 (00)
+// AtCoder       -> Difficulty :    0 (00)
 
 // Header
 #include <bits/stdc++.h>
