@@ -99,6 +99,7 @@ typedef long long ll;
 #define distance(x1, y1, x2, y2) sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))
 
 // Const values:
+#define pi 3.1415926535897932384626
 #define mod 1000000007
 
 // Functions:
@@ -175,6 +176,25 @@ void solve()
 {
     int n;
     cin >> n;
+
+    vector <int> v(n);
+
+    for(int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+
+    ll need = 0, sum = 0;
+
+    for(int i = 0; i < n; i++) {
+        need += i;
+        sum += v[i];
+
+        if(need > sum) {
+            cout << "NO\n";
+            return;
+        }
+    }
+    cout << "YES\n";
 }
 
 int main()
