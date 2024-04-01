@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30) -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Solve(min) :  100      -> (Judge ID: 319545ZL)
+// Timus OJ      -> Difficulty :    0 (00) -> (Judge ID: 319545ZL)
 
 // Header
 #include <bits/stdc++.h>
