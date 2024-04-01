@@ -181,7 +181,19 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+
+    while(a < c) {
+        if(a+b > c) break;
+        a += b;
+        c -= d;
+        // value(a);
+        // value(c);
+    }
+
+    cout << max(a, c) << '\n';
 
     return 0;
 }
