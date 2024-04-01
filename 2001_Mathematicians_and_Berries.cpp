@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30) -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Solve(min) :  100      -> (Judge ID: 319545ZL)
+// Timus OJ      -> Solve(min) :  100
 
 // Header
 #include <bits/stdc++.h>
@@ -182,7 +182,12 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    short m1, m2, a1, a2, b1, b2;
+    cin >> m1 >> m2 >> a1 >> a2 >> b1 >> b2;
+
+    cout << m1 - b1 << ' ' << m2 - a2 << '\n';
 
     return 0;
 }
