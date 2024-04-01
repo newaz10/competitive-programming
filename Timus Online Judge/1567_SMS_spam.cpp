@@ -181,7 +181,33 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+    string s;
+    getline(cin, s);
+    ignore;
+
+    int ttl = 0;
+    for(short i = 0; i < s.length(); i++) {
+        if(s[i] == ' ' || s[i] == '.') {
+            ttl++;
+        }
+        else if(s[i] == ',') {
+            ttl += 2;
+        }
+        else if(s[i] == '!') {
+            ttl += 3;
+        }
+        else if(s[i] >= 'a' && s[i] <= 'z') {
+            short c = s[i] - 'a';
+            c %= 3;
+            c++;
+            // cout << s[i] << " -> " << c << endl;
+
+            ttl += c;
+        }
+    }
+
+    cout << ttl << '\n';
 
     return 0;
 }
