@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30) -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    0 (05) -> Problem: 1876 
+// Timus OJ      -> Difficulty :    0 (00) -> 
 
 // Header
 #include <bits/stdc++.h>
@@ -181,7 +181,22 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+    int n;
+    cin >> n;
+
+    map <string, short> m;
+    while(n--) {
+        string s;
+        cin >> s;
+        m[s]++;
+    }
+
+    for(auto &it : m) {
+        if(it.second > 1) {
+            cout << it.first << '\n';
+        }
+    } 
 
     return 0;
 }
