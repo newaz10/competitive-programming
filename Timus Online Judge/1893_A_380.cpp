@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30) -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    0 (-5) -> Problem: 1563
+// Timus OJ      -> Difficulty :    0 (05) -> Problem: 1563
 
 // Header
 #include <bits/stdc++.h>
@@ -177,10 +177,54 @@ void solve()
     cin >> n;
 }
 
+string checkSeat(string s) {
+    int r = stoi(s.substr(0, s.size() - 1));
+    char c = s.back();
+
+    if (r >= 1 && r <= 2) {
+        if (c == 'A' || c == 'D') {
+            return "window";
+        }
+        else if (c == 'B' || c == 'C') {
+            return "aisle";
+        }
+        else {
+            return "neither";
+        }
+    } 
+    else if (r >= 3 && r <= 20) {
+        if (c == 'A' || c == 'F') {
+            return "window";
+        }
+        else if (c == 'B' || c == 'C' || c == 'D' || c == 'E') {
+            return "aisle";
+        }
+        else {
+            return "neither";
+        }
+    }
+    else if (r >= 21 && r <= 65) {
+        if (c == 'A' || c == 'K') {
+            return "window";
+        }
+        else if (c == 'C' || c == 'D' || c == 'G' || c == 'H') {
+            return "aisle";
+        }
+        else {
+            return "neither";
+        }
+    }
+}
+
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    string s;
+    cin >> s;
+
+    cout << checkSeat(s) << '\n';
 
     return 0;
 }
