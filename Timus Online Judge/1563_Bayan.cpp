@@ -180,7 +180,29 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    int n;
+    cin >> n;
+    cin.ignore(); 
+
+    unordered_map <string, int> m; 
+
+    for (int i = 0; i < n; ++i) {
+        string s;
+        getline(cin, s);
+        m[s]++;
+    }
+
+    int cnt = 0;
+
+    for (const auto& pair : m) {
+        if (pair.second > 1) { 
+            cnt += pair.second - 1; 
+        }
+    }
+
+    cout << cnt << '\n';
 
     return 0;
 }
