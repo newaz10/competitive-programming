@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30)   -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    0 (-15)  -> Problem: 1563
+// Timus OJ      -> Difficulty :    0 (-10)  -> Problem: 1563
 
 // Header
 #include <bits/stdc++.h>
@@ -180,7 +180,28 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    string s;
+    cin >> s;
+
+    deque <char> d;
+
+    for(int i = 0; i < sz(s); i++) {
+        if(d.empty()) {
+            d.pb(s[i]);
+        }
+        else if(d.back() == s[i]) {
+            d.pop_back();
+        }
+        else {
+            d.push_back(s[i]);
+        }
+    }
+
+    for(int i = 0; i < d.size(); i++) {
+        cout << d[i];
+    }
 
     return 0;
 }
