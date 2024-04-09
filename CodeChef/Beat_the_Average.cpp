@@ -173,8 +173,17 @@ bool vc(char c)
 // Code Starts from here...
 void solve()
 {
-    int n;
-    cin >> n;
+    int n, m, x;
+    cin >> n >> m >> x;
+    if (m <= x)
+    {
+        cout << 0 << '\n';
+    }
+    else
+    {
+        int a = (n*x) / (x+1);
+        cout << a << '\n';
+    }
 }
 
 int main()
