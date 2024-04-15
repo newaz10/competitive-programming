@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30)   -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    0 (-20)  -> Problem: 1149
+// Timus OJ      -> Difficulty :    0 (-20)  -> Problem: 2025
 
 // Header
 #include <bits/stdc++.h>
@@ -173,8 +173,33 @@ bool vc(char c)
 // Code Starts from here...
 void solve()
 {
-    int n;
-    cin >> n;
+    int n, k, items, v1, v2, sub = 0;
+    ll ans = 0;
+    cin >> n >> k;
+
+    items = n%k, v1 = n/k + 1, v2 = n/k;
+    ans = 0;
+
+    // value(items);
+    // value(v1);
+    // value(v2);
+
+    for (int i = 1; i < k; i++) {
+        if(i <= items) {
+            sub += v1;
+            ans += v1 * (n - sub);
+            // cout << "#1: ";
+            // value(ans);
+        }
+        else {
+            sub += v2;
+            ans += v2 * (n - sub);
+            // cout << "#2: ";
+            // value(ans);
+        }
+    }
+
+    cout << ans << '\n';
 }
 
 int main()
