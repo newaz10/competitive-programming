@@ -180,7 +180,17 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    int w1, w2, n1, n2;
+    cin >> w1 >> w2 >> n1 >> n2;
+    
+    if(n1 <= n2) {
+        cout << (n2-n1)*2*w2+(n2-n1-1)*w1 << '\n';
+    }
+    else {
+        cout << (n1-n2)*2*w2+(n1-n2+1)*w1 << '\n';
+    }
 
     return 0;
 }
