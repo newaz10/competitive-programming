@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30)   -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    0 (-20)  -> Problem: 1146
+// Timus OJ      -> Difficulty :    0 (-20)  -> Problem: 1139
 
 // Header
 #include <bits/stdc++.h>
@@ -180,7 +180,36 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    int n, sum = 0;
+    cin >> n;
+
+    deque<int> d(n);
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> d[i];
+        sum += d[i];
+    }
+
+    int ans = sum;
+    deque<bool> dp(sum + 1, 0);
+    dp[0] = 1;
+
+    for (int j = 1; j < n; j++)
+    {
+        for (int i = sum; i >= 1; i--)
+        {
+            if (i >= d[j] && dp[i - d[j]])
+            {
+                dp[i] = 1;
+                ans = min(ans, abs(sum - i * 2));
+            }
+        }
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }
