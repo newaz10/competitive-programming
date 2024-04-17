@@ -180,7 +180,19 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    ll n, sum = 0;
+    cin >> n;
+
+    for(int i = 0; i < n; i++) {
+        int v;
+        cin >> v;
+
+        sum += v;
+    }
+
+    cout << sum * sum << '\n';
 
     return 0;
 }
