@@ -180,7 +180,26 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    ll x, y, c;
+    cin >> x >> y >> c;
+
+    if (x + y < c)
+    {
+        cout << "Impossible\n";
+    }
+    else
+    {
+        if (x <= c)
+        {
+            cout << x << " " << (c - x) << "\n";
+        }
+        else
+        {
+            cout << c << " " << 0 << "\n";
+        }
+    }
 
     return 0;
 }
