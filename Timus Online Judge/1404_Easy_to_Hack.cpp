@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30)   -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    0 (-20)  -> Problem: 1297
+// Timus OJ      -> Difficulty :    0 (-20)  -> Problem: 1146
 
 // Header
 #include <bits/stdc++.h>
@@ -28,17 +28,17 @@ typedef long long ll;
     }
 
 // Print Shortcuts
-#define printvs(vec)      \
-    for (auto &i : vec)   \
-    {                     \
+#define printvs(vec)     \
+    for (auto &i : vec)  \
+    {                    \
         cout << i << ' '; \
-    }                     \
+    }                    \
     cout << '\n';
-#define printvn(vec)      \
-    for (auto &i : vec)   \
-    {                     \
+#define printvn(vec)     \
+    for (auto &i : vec)  \
+    {                    \
         cout << i << ' '; \
-    }                     \
+    }                    \
     cout << '\n';
 
 // Debug:
@@ -180,7 +180,40 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+    string str;
+    cin >> str;
+
+    deque<short> d(sz(str));
+
+    for(short i = 0; i < sz(str); i++) {
+        d[i] = str[i] - 'a';
+    }
+
+    for(short i = 1; i < sz(str); i++) {
+        while(d[i] < d[i-1]) {
+            d[i] += 26;
+        }
+    }
+
+    for(short i = sz(str)-1; i >= 1; i--) {
+        d[i] -= d[i-1];
+    }
+    d[0] %= 26;
+
+    if(d[0] < 5) {
+        d[0] += 26;
+    }
+    d[0] -= 5;
+
+    string alp = "abcdefghijklmnopqrstuvwxyz";
+
+    for(short i = 0; i < sz(str); i++) {
+        cout << alp[d[i]];
+    }
+    cout << '\n';
+
+    // printvs(d);
 
     return 0;
 }
