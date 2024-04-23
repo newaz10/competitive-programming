@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30)   -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    <= 150  -> Volume 4
+// Timus OJ      -> Difficulty :    <= 150  -> Problem: 1354
 
 // Header
 #include <bits/stdc++.h>
@@ -161,7 +161,19 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+    int n;
+    cin >> n;
+
+    if(n == 1) {
+        cout << "1 2 3\n";
+    }
+    else if(n == 2) {
+        cout << "3 4 5\n";
+    }
+    else {
+        cout << "-1\n";
+    }
 
     return 0;
 }
