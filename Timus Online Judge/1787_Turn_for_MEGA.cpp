@@ -161,7 +161,23 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    int n, k, ans = 0;
+    cin >> k >> n;
+
+    while(n--) {
+        int v;
+        cin >> v;
+
+        ans += (v-k);
+
+        if(ans < 0) {
+            ans = 0;
+        }
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }
