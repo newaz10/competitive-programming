@@ -161,7 +161,27 @@ void solve()
 int main()
 {
     FIO;
-    tc;
+    // tc;
+
+    int n, cnt = 2;
+    cin >> n;
+
+    cnt += n;
+
+    for(int i = 0; i < n; i++) {
+        string s;
+        cin >> s;
+
+        if(s.find("+one", 0) != string::npos) {
+            cnt++;
+        }
+    }
+
+    if(cnt == 13) {
+        cnt++;
+    }
+
+    cout << cnt * 100 << '\n';
 
     return 0;
 }
