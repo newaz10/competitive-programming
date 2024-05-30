@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30)   -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    <= 150   -> Problem: 1545
+// Timus OJ      -> Difficulty :    <= 150
 
 // Header
 #include <bits/stdc++.h>
@@ -152,14 +152,22 @@ bool vc(char c)
 }
 
 // Code Starts from here...
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
 }
 
 int main() {
     FIO;
-    tc;
+    // tc;
+
+    int a, b, c;
+    cin >> a >> b;
+
+    c = b - a + (a%2) + (b%2);
+
+    cout << c/2;
 
     return 0;
 }
