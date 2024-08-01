@@ -2,7 +2,7 @@
 // CC (min 1000) -> Difficulty : 1265 (30)   -> Tags: Sorting
 // AtCoder       -> Point      :    0 (00)
 // AtCoder       -> Difficulty :    0 (00)
-// Timus OJ      -> Difficulty :    <= 150   -> Problem: 1545
+// UVa           -> 
 
 // Header
 #include <bits/stdc++.h>
