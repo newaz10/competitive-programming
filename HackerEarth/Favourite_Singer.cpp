@@ -159,7 +159,32 @@ void solve() {
 
 int main() {
     FIO;
-    tc;
+    // tc;
+
+    int n, mx = -9, cnt = 1;
+    cin >> n;
+
+    umap(int, int, m);
+
+    for (int i = 0; i < n; i++) {
+        int v;
+        cin >> v;
+        m[v]++;
+    }
+
+    for (auto &i: m) {
+        // cout << i.first << ' ' << i.second << endl;
+        if(i.second == mx) {
+            cnt++;
+        } 
+
+        if(i.second > mx) {
+            mx = i.second;
+            cnt = 1;
+        }
+    }
+
+    cout << cnt << '\n';
 
     return 0;
 }
