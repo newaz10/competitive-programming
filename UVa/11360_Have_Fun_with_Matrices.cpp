@@ -153,13 +153,102 @@ bool vc(char c)
 
 // Code Starts from here...
 void solve() {
-    int n;
-    cin >> n;
+    
 }
 
 int main() {
     FIO;
-    tc;
+    // tc;
+
+    int t;
+    cin >> t;
+
+    for (int tcs = 1; tcs <= t; tcs++) {
+        int n, m;
+        cin >> n;
+
+        int arr[n][n];
+
+        for (int i = 0; i < n; i++) {
+            string str;
+            cin >> str;
+
+            for (int j = 0; j < n; j++) {
+                arr[i][j] = str[j] - '0';
+            }
+        }
+
+        // for (int i = 0; i < n; i++) {
+        //     for (int j = 0; j < n; j++) {
+        //         cout << arr[i][j] << ' ';
+        //     }
+        //     cout << endl;
+        // }
+        // cout << endl;
+
+        cin >> m;
+        cin.ignore();
+        for (int im = 0; im < m; im++) {
+            string str;
+            getline(cin, str);
+
+            if (str[0] == 'r') {
+                int a, b;
+                a = str[4] - '0';
+                b = str[6] - '0';
+                a--;
+                b--;
+
+                // cout << a << ' ' << b << endl;
+
+                for (int j = 0; j < n; j++) {
+                    swap(arr[a][j], arr[b][j]);
+                }
+            } else if (str[0] == 'c') {
+                int a, b;
+                a = str[4] - '0';
+                b = str[6] - '0';
+                a--;
+                b--;
+
+                // cout << a << ' ' << b << endl;
+
+                for (int j = 0; j < n; j++) {
+                    swap(arr[j][a], arr[j][b]);
+                }
+            } else if (str[0] == 'i') {
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < n; j++) {
+                        arr[i][j]++;
+                        arr[i][j] %= 10;
+                    }
+                }
+            } else if (str[0] == 'd') {
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < n; j++) {
+                        arr[i][j]--;
+                        arr[i][j] += 10;
+                        arr[i][j] %= 10;
+                    }
+                }
+            } else if (str[0] == 't') {
+                for (int i = 0; i < n; i++) {
+                    for (int j = i + 1; j < n; j++) {
+                        swap(arr[i][j], arr[j][i]);
+                    }
+                }
+            }
+        }
+
+        cout << "Case #" << tcs << '\n';
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                cout << arr[i][j];
+            }
+            cout << '\n';
+        }
+        cout << '\n';
+    }
 
     return 0;
 }
