@@ -157,7 +157,26 @@ void solve() {
 
 int main() {
     FIO;
-    tc;
+    // tc;
+    int n;
+
+    while(cin >> n && n != 0) {
+        deque(int, d(n));
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> d[i];
+        }
+        
+        sorta(d)
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            /* code */
+            cout << d[i] << ' ';
+        }
+        cout << d[n-1] << '\n';
+    }
 
     return 0;
 }
