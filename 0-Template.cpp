@@ -1,6 +1,6 @@
 // CF (min 0900) -> Difficulty : 0990 (85)               -> Tags: 
 // CC (min 1000) -> Difficulty : 1265 (30)               -> Tags: Sorting
-// UVa
+// HackerRank
 
 // Header
 #include <bits/stdc++.h>
