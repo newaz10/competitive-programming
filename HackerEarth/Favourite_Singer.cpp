@@ -1,8 +1,7 @@
-// CF (min 0900) -> Difficulty : 0990 (85)               -> Tags: dp
+// CF (min 0900) -> Difficulty : 0990 (85)               -> Tags: 
 // CC (min 1000) -> Difficulty : 1265 (30)               -> Tags: Sorting
-// AtCoder       -> Point      :    0 (00)
-// AtCoder       -> Difficulty :    0 (00)
-// UVa           -> Data Structures and Libraries	     -> 2D Array Manipulation, Easier
+// HackerEarth
+
 
 // Header
 #include <bits/stdc++.h>
@@ -161,30 +160,38 @@ int main() {
     FIO;
     // tc;
 
-    int n, mx = -9, cnt = 1;
-    cin >> n;
+    int n;
+	cin >> n;
+	vector<long long> a(n);
 
-    umap(int, int, m);
+	for(int i = 0; i < n; i++) {
+		long long x;
+		cin >> x;
+		a[i] = x;
+	}
 
-    for (int i = 0; i < n; i++) {
-        int v;
-        cin >> v;
-        m[v]++;
-    }
+	map<long long, int> m;
 
-    for (auto &i: m) {
-        // cout << i.first << ' ' << i.second << endl;
-        if(i.second == mx) {
-            cnt++;
-        } 
+	for(int i = 0; i < n; i++) {
+		long long number = a[i];
+		m[number]++;
+	}
 
-        if(i.second > mx) {
-            mx = i.second;
-            cnt = 1;
-        }
-    }
+	int maximum = INT_MIN;
+	
+    for(auto x:m) {
+		maximum = max(maximum, x.second);
+	}
 
-    cout << cnt << '\n';
+	int ans = 0;
+
+	for(auto x:m) {
+		if(x.second == maximum) {
+			ans++;
+		}
+	}
+
+	cout << ans << '\n';
 
     return 0;
 }
