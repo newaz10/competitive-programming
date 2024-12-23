@@ -1,6 +1,6 @@
 // CF (min 0900) -> Difficulty : 0990 (85)               -> Tags: 
 // CC (min 1000) -> Difficulty : 1265 (30)               -> Tags: Sorting
-// HackerEarth   -> #2
+// HackerEarth
 
 
 // Header
@@ -152,8 +152,31 @@ bool vc(char c)
 
 // Code Starts from here...
 void solve() {
-    int n;
+    int n, cnt = 0;
+    string s;
+    deque <int> ar(26, 0);
+
     cin >> n;
+    cin >> s;
+
+    for (int i = 0; i < n; i++) {
+        ar[s[i]-'a']++;
+    }
+
+    for (int i = 0; i < 26; i++) {
+        ar[i] %= 2;
+
+        if(ar[i]) {
+            cnt++;
+        }
+    }
+
+    if(cnt) {
+        cout << --cnt << '\n';
+    }
+    else {
+        cout << 0 << '\n';
+    }
 }
 
 int main() {
