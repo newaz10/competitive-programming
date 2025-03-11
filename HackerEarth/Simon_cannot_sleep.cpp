@@ -158,7 +158,12 @@ void solve() {
 
 int main() {
     FIO;
-    tc;
+    // tc;
+
+    int x, y;
+    scanf("%d:%d", &x, &y);
+
+    cout << ((x*60)+y)*11/720+1 << '\n';
 
     return 0;
 }
