@@ -1,0 +1,18 @@
+# Ignore CPH problem files
+.cph/
+
+# Ignore compiled binaries and object files
+*.exe
+*.out
+*.o
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
