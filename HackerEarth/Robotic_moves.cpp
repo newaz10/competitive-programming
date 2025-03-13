@@ -152,13 +152,26 @@ bool vc(char c)
 
 // Code Starts from here...
 void solve() {
-    int n;
-    cin >> n;
+    
 }
 
 int main() {
     FIO;
-    tc;
+    // tc;
+
+    int t;
+    cin >> t;
+
+    while (t--) {
+        long long int n, sum = 0;
+        cin >> n;
+
+        // value(n);
+
+        sum = n * (n + 1);
+        
+        printf("%lld\n", sum);
+    }
 
     return 0;
 }
