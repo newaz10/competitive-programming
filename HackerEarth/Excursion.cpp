@@ -152,8 +152,22 @@ bool vc(char c)
 
 // Code Starts from here...
 void solve() {
-    int n;
-    cin >> n;
+    short m, n, k, r;
+    cin >> n >> m >> k;
+
+    // cout << n << " " << m << " " << k << endl;
+    
+    r = (m/k) + (n/k);
+
+    if (m%k != 0) {
+        r++;
+    }
+
+    if (n%k != 0) {
+        r++;
+    }
+
+    cout << r << '\n';
 }
 
 int main() {
