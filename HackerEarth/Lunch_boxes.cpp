@@ -152,8 +152,28 @@ bool vc(char c)
 
 // Code Starts from here...
 void solve() {
-    int n;
-    cin >> n;
+    int n, m, cnt = 0, sum = 0;
+    cin >> n >> m;
+    vector<int> a(m); 
+
+    for (int i = 0; i < m; i++) {
+        cin >> a[i];
+    }
+
+    sorta(a);
+
+    for (int i = 0; i < m; i++) {
+        sum += a[i];
+
+        if (sum <= n) {
+            cnt++;
+        }
+        else {
+            break;
+        }
+    }
+
+    cout << cnt << '\n';
 }
 
 int main() {
