@@ -1,6 +1,6 @@
 // CF (min 0900) -> Difficulty : 0990 (85)               -> Tags: 
 // CC (min 1000) -> Difficulty : 1265 (30)               -> Tags: Sorting
-// HackerEarth   -> #1                                   -> basic programming - Easy (90%) 
+// HackerEarth   -> #1                                   -> basic programming - Easy (91%) 
 
 
 // Header
@@ -154,6 +154,8 @@ bool vc(char c)
 void solve() {
     int n;
     cin >> n;
+
+    cout << n*(n - 1) + 1 << '\n';
 }
 
 int main() {
