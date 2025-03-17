@@ -151,38 +151,58 @@ bool vc(char c)
 }
 
 // Code Starts from here...
+bool isBeautiful(int n, int k) {
+    while (n > 0) {
+        int digit = n % k; 
+        if (digit > 1) {   
+            return false;
+        }
+        n /= k; 
+    }
+    return true; 
+}
 void solve() {
     int n, k;
-    bool flag = true;
-
     cin >> n >> k;
 
-    while (n > 0) {
-        if (n%k == 0) {
-            n /= k;
-        } 
-        else {
-            n--;
+    if (isBeautiful(n, k)) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
+}
 
-            if (n%k != 0) {
-                flag = false;
+// Main Function
+int main() {
+    int t, k;
+    long long x;
+    bool poss = true;
+
+    cin >> t;
+
+    while (t--) {
+        poss = true;
+        cin >> x >> k;
+
+        while (x != 0) {
+            if (x % k != 0) { 
+                x--; 
+                if (x % k != 0) { 
+                    cout << "NO\n";
+                    poss = false;
+                    break;
+                } else {
+                    x = x / k; 
+                }
+            } else {
+                x = x / k;
             }
         }
 
-        if (!flag) break;
+        if (poss) {
+            cout << "YES\n";
+        }
     }
-
-    if (flag) {
-        cout << "YES" << endl;
-    } 
-    else {
-        cout << "NO" << endl;
-   }
-}
-
-int main() {
-    FIO;
-    tc;
 
     return 0;
 }
