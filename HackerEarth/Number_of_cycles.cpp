@@ -152,7 +152,7 @@ bool vc(char c)
 
 // Code Starts from here...
 void solve() {
-    int n;
+    ll n;
     cin >> n;
 
     cout << n*(n - 1) + 1 << '\n';
