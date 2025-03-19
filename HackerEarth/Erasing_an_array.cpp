@@ -1,6 +1,6 @@
 // CF (min 0900) -> Difficulty : 0990 (85)               -> Tags: 
 // CC (min 1000) -> Difficulty : 1265 (30)               -> Tags: Sorting
-// HackerEarth   -> #1                                   -> basic programming - Easy (89%) 
+// HackerEarth   -> #1                                   -> basic programming - Easy (88%) 
 
 
 // Header
@@ -153,7 +153,23 @@ bool vc(char c)
 // Code Starts from here...
 void solve() {
     int n;
-    cin >> n;
+    cin >> n; // Read array size
+
+    int a[n]; // Declare array
+    for (int i = 0; i < n; i++) {
+        cin >> a[i]; // Read array elements
+    }
+
+    int counter = 1; // Initialize counter
+
+    // Traverse the array to count the number of increasing sequences
+    for (int i = 0; i < n - 1; i++) {
+        if (a[i] > a[i + 1]) { 
+            counter++; // Increase counter when order breaks
+        }
+    }
+
+    cout << counter << '\n';
 }
 
 int main() {
