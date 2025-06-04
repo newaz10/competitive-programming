@@ -1,6 +1,6 @@
 // CF (min 0900) -> Difficulty : 0990 (85)               -> Tags: 
 // CC (min 1000) -> Difficulty : 1265 (30)               -> Tags: Sorting
-// HackerEarth   -> M (100%)                          -> arrays (4.8)
+// HackerEarth   -> Easy (100%)                          -> 1D Array
 
 
 // Header
@@ -158,7 +158,28 @@ void solve() {
 
 int main() {
     FIO;
-    tc;
+    // tc;
+
+    int n;
+    scanf("%d", &n);
+    vector<int> arr(n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    long long int sum = 0;
+
+    for (int i = 0; i < n - 1; i++) {
+        if (arr[i] >= arr[i + 1]) {
+            int v = arr[i] - arr[i + 1] + 1;
+            
+            sum += v;
+            arr[i + 1] += v;
+        }
+    }
+
+    printf("%lld\n", sum);
 
     return 0;
 }

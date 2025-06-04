@@ -1,6 +1,6 @@
 // CF (min 0900) -> Difficulty : 0990 (85)               -> Tags: 
 // CC (min 1000) -> Difficulty : 1265 (30)               -> Tags: Sorting
-// HackerEarth   -> M (100%)                          -> arrays (4.8)
+// HackerEarth   -> Easy (100%)                          -> 1D Array(4.9)
 
 
 // Header
@@ -158,7 +158,37 @@ void solve() {
 
 int main() {
     FIO;
-    tc;
+    // tc;
+
+    int n;
+    cin >> n;
+
+    umap(int, ll, m);
+
+    for (int i = 0; i < n; i++) {
+        ll v;
+        cin >> v;
+
+        // Using set to store unique digits
+        set <ll> s;
+
+        while(v) {
+            s.insert(v % 10);
+            v /= 10;
+        }
+
+        for (auto i : s) {
+            m[i]++;
+        }
+    }
+
+    ll ans = 0;
+
+    for (auto i : m) {
+        ans = max(ans, i.se);
+    }
+
+    cout << ans << '\n';
 
     return 0;
 }
