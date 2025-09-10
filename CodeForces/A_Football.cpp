@@ -137,6 +137,16 @@ ll gcd(ll a, ll b)
 }
 ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
 
+// Check whether a character is vowel or consonant
+bool vc(char c)
+{
+    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+        return true;
+    if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
+        return true;
+    return false;
+}
+
 // Code Starts from here...
 void solve() {
     int n;
@@ -147,7 +157,25 @@ void solve() {
 
 int main() {
     FIO;
-    tc;
+    // tc;
+    string s;
+    cin >> s;
+
+    int consecutive = 1; 
+
+    for (int i = 1; i < s.length(); i++) {
+        if (s[i] == s[i - 1]) {
+            consecutive++;
+            if (consecutive >= 7) {
+                cout << "YES" << endl;
+                return 0; 
+            }
+        } else {
+            consecutive = 1; 
+        }
+    }
+
+    cout << "NO" << endl;
 
     return 0;
 }

@@ -5,6 +5,7 @@
 *.exe
 *.out
 *.o
+*.txt
 
 # Editor directories and files
 .vscode/*
