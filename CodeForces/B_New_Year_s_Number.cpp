@@ -10,6 +10,10 @@ typedef long long ll;
 // First I/O operation
 #define FIO ios_base::sync_with_stdio(false); cin.tie(NULL);
 
+// Test Case for CP
+#define tc int t; cin >> t; sol;
+#define sol while (t--) {solve();}
+
 // Print Shortcuts
 #define printvs(vec) for (auto &i : vec) { cout << i << ' '; } cout << '\n';
 #define printvn(vec) for (auto &i : vec) { cout << i << '\n'; } cout << '\n';
@@ -67,8 +71,23 @@ typedef long long ll;
 #define mod 1000000007
 
 // Code Starts from here...
+void solve() {
+    int n;
+    cin >> n;
+
+    int k = n / 2020;
+    int r = n % 2020;
+
+    if (k >= r) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
+}
+
 int main() {
     FIO;
+    tc;
 
     return 0;
 }
